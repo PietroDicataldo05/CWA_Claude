@@ -1,0 +1,6 @@
+{
+  "name": "COEBO Client & Customization Portal",
+  "description": "Piattaforma di gestione integrata per la digitalizzazione delle commesse immobiliari, il tracciamento dei documenti di cantiere e la gestione delle varianti extra-capitolato.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

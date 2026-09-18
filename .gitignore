@@ -1,0 +1,15 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Legacy file-based database (superseded by Supabase; contained plaintext demo passwords)
+db.json
+db_temp.json
+
+# Local Claude Code session runtime files
+.claude/*.lock

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-mono-tech {
+    font-family: var(--font-mono);
+  }
+
+  /* Tactile Industrial Blueprint & Spatial 3D Grids */
+  .bg-blueprint-grid {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(245, 158, 11, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(245, 158, 11, 0.05) 1px, transparent 1px);
+  }
+
+  .bg-blueprint-dots {
+    background-size: 24px 24px;
+    background-image: radial-gradient(circle, rgba(245, 158, 11, 0.12) 1px, transparent 1px);
+  }
+
+  /* Tactile Brutalism 3D Spatial Shadows */
+  .brutalist-shadow-amber {
+    box-shadow: 4px 4px 0px 0px rgba(245, 158, 11, 0.85);
+  }
+
+  .brutalist-shadow-cyan {
+    box-shadow: 4px 4px 0px 0px rgba(14, 165, 233, 0.85);
+  }
+
+  .brutalist-shadow-dark {
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.95);
+  }
+
+  .brutalist-shadow-sm {
+    box-shadow: 3px 3px 0px 0px rgba(245, 158, 11, 0.6);
+  }
+
+  .glow-amber-lg {
+    box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.35);
+  }
+
+  .glow-cyan-lg {
+    box-shadow: 0 0 25px -5px rgba(14, 165, 233, 0.3);
+  }
+}
+
+/* Base Dark Mode 3.0 Canvas */
+body {
+  background-color: #0B0F17;
+  color: #F3F4F6;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Form fields default to dark, readable text since most sit on light/white
+   modal backgrounds. This must live in @layer base (not as bare CSS): Tailwind
+   v4 puts its own utilities in CSS cascade layers, and an unlayered rule
+   always wins over a layered one regardless of specificity — a bare
+   `input { color: ... }` here would silently override every text-white /
+   text-amber-* utility applied directly to a dark-styled input or select. */
+@layer base {
+  input,
+  textarea,
+  select {
+    color: #0F172A;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: #94A3B8;
+  }
+}
+
+/* Custom Industrial Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0D111A;
+}
+::-webkit-scrollbar-thumb {
+  background: #2D3748;
+  border-radius: 4px;
+  border: 1px solid #F59E0B;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F59E0B;
+}
+
+
